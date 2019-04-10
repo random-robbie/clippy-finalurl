@@ -166,14 +166,14 @@ func main() {
 			}
 			defer f.Close()
 			for k, v := range dedupMap {
-				_, err := f.WriteString(fmt.Sprintf("%s -> %s\n", k, v))
+				_, err := f.WriteString(fmt.Sprintf("%s,%s\n", k, v))
 				if err != nil {
 					log.Fatal(err)
 				}
 			}
 		} else {
 			for k, v := range dedupMap {
-				log.Printf("% -> %s\n", k, v)
+				log.Printf("%,%s\n", k, v)
 			}
 		}
 
